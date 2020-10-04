@@ -22,10 +22,13 @@
           <span class="navbar-text">
            <?php 
            
-           if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) { ?>
-                <!--Profile picture and logout button-->123
+           if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+  
+           ?>
+            
+                <!--Profile picture and logout button-->
                 <img src="images/profile.jpg" class="rounded-circle" alt="profilepic" style="height:3.5vw;width:3.5vw;">
-                <button type="button" class="btn btn-light" id="sign">Logout</button>
+                <a href="logout.php"><button type="button" class="btn btn-light" id="sign">Logout</button></a>
          
           <?php } else{ ?>
              <button type="button" class="btn btn-warning" style="color: black;" id="join">Join</button>
@@ -118,7 +121,7 @@
 <!-- upload modal -->
 
 <div id="myModal1" class="modal">
-
+<form method="POST" action="login.php">
    <div class="modal-content  sign_in">
       <div style="margin-bottom:2vw"> <span class="close" id="close_signin"><i class="fas fa-times-circle fa-2x"></i></span></div>
       <div class="modal-inside">
@@ -127,21 +130,21 @@
            <div class="form-group">
             <h1 style="text-align: center;">Login</h1>
             <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
            
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <input name="pass" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
           </div>   
 
-        <button style="margin-left:auto ;"  type="button" class="btn btn-primary btn-block continue" id="browse_more"><h5 style="color: white;">Log IN </h5></button>
+        <button style="margin-left:auto ;"  type="submit" class="btn btn-primary btn-block continue" id="browse_more"><h5 style="color: white;">Log IN </h5></button>
       </form>
   
       </div>
     </div></div>
   
-  </div></div>
+  </div></form></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js" integrity="sha512-CEiA+78TpP9KAIPzqBvxUv8hy41jyI3f2uHi7DGp/Y/Ka973qgSdybNegWFciqh6GrN2UePx2KkflnQUbUhNIA==" crossorigin="anonymous"></script>
 <script>

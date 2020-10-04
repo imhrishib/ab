@@ -6,7 +6,7 @@ $password="";
 $db_name="hobbyhub"; 
 
 
-mysql_connect("$host", "$username", "$password")or die("cannot connect"); 
-mysql_select_db("$db_name")or die("cannot select DB");
+$connect=mysqli_connect("$host", "$username", "$password")or die("cannot connect"); 
+mysqli_select_db($connect,"$db_name")or die("cannot select DB");
 
 ?>
